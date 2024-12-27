@@ -1,9 +1,10 @@
-from db.models import Term
-from db.utils import get_db
 from sqlalchemy.orm import Session
-from models.term_models import TermCreate, Terms
 from fastapi import HTTPException, Depends, APIRouter
 
+
+from app.db.models import Term
+from app.db.utils import get_db
+from app.models.pydantic_models import TermCreate, Terms
 
 router = APIRouter()
 

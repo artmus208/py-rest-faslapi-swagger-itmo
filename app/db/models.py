@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from db.models import Base
+from app.db.setup_db import Base
 
 
 class Term(Base):

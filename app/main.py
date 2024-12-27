@@ -1,9 +1,10 @@
 from fastapi import FastAPI
-from sqlalchemy.orm import Session
-from db.setup_db import engine
 from fastapi.middleware.cors import CORSMiddleware
-from api.routes import router
-from db.models import Base
+from sqlalchemy.orm import Session
+
+from app.db.setup_db import engine
+from app.api.routes import router
+from app.db.models import Base
 
 Base.metadata.create_all(bind=engine)
 

@@ -1,4 +1,4 @@
-from db.setup_db import SessionLocal
+from app.db.setup_db import SessionLocal
 
 
 # Функция для получения сессии
