@@ -1,0 +1,13 @@
+services:
+  backend:
+    build:
+      context: C:\\Users\\musta\\Desktop\\PESK\\ProjectsSrc\\itmo\\py-eco-sys\\practice11\\
+      dockerfile: C:\\Users\\musta\\Desktop\\PESK\\ProjectsSrc\\itmo\\py-eco-sys\\practice11\\Dockerfile
+    ports:
+      - "5000:5000"  # Укажите нужный порт
+    volumes:
+      - .:/app  # Монтируем текущую директорию внутрь контейнера
+
+  
+  
+

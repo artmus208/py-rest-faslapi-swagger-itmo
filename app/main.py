@@ -9,7 +9,7 @@ from app.db.models import Base
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-app.include_router(router)
+app.include_router(router, prefix="")
 
 app.add_middleware(
     CORSMiddleware,

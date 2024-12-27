@@ -9,16 +9,16 @@ from app.models.pydantic_models import TermCreate, Terms
 router = APIRouter()
 
 
-@router.post("/terms/", response_model=Terms)
+@router.post("/terms", response_model=Terms)
 def create_term(term: TermCreate, db: Session = Depends(get_db)):
-    db_term = Term(**term.dict())
+    db_term = Term(**term.model_dump())
     db.add(db_term)
     db.commit()
     db.refresh(db_term)
     return db_term
 
 
-@router.get("/terms/", response_model=list[Terms])
+@router.get("/terms", response_model=list[Terms])
 def read_terms(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     terms = db.query(Term).all()
     if limit <= skip:
@@ -39,7 +39,7 @@ def update_term(keyword: str, term: TermCreate, db: Session = Depends(get_db)):
     db_term = db.query(Term).filter(Term.keyword == keyword).first()
     if db_term is None:
         raise HTTPException(status_code=404, detail="Term not found")
-    for key, value in term.dict().items():
+    for key, value in term.model_dump().items():
         setattr(db_term, key, value)
     db.commit()
     return db_term
