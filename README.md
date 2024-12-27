@@ -26,10 +26,21 @@
 - обеспечите автоматическую миграцию структуры данных при старте приложения. 
 
 ### Процесс развёртывания
-...
+![alt text](/img/image.png)
 
 ### Процесс работы сервиса  
-...
+![alt text](img/image-1.png)
+![alt text](img/image-1.1.png)
 
 #### Добавление нового термина
-...
+![alt text](/img/image-2.png)
+
+#### Обновление существующего термина
+![alt text](img/image-3.png)
+![alt text](img/image-3.1.png)
+
+#### Удаление термина из глоссария
+![alt text](img/image-4.png)
+![alt text](img/image-4.1.png)
+![alt text](img/image-4.2.png)
+
